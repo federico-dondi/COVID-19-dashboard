@@ -17,6 +17,11 @@ export default new VueRouter({
       path: '/guidelines',
       name: 'Guidelines',
       component: () => import('@/views/Guidelines.vue')
+    },
+    {
+      path: '/about',
+      name: 'About',
+      component: () => import('@/views/About.vue')
     }
   ]
 })
