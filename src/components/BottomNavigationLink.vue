@@ -19,5 +19,5 @@ export default class BottomNavigationLink extends Vue {
 </script>
 
 <style scoped>
-.stretch { height: 100%; }
+.stretch { height: 100% !important; }
 </style>
