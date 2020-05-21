@@ -13,6 +13,10 @@ export default new VueRouter({
       path: '/wiki',
       name: 'Wiki',
       component: () => import('@/views/Wiki.vue')
+    }, {
+      path: '/guidelines',
+      name: 'Guidelines',
+      component: () => import('@/views/Guidelines.vue')
     }
   ]
 })
