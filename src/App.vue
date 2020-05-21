@@ -8,6 +8,8 @@
         <router-view></router-view>
       </v-container>
     </v-content>
+
+    <bottom-navigation />
   </v-app>
 </template>
 
@@ -17,7 +19,8 @@ import Component from 'vue-class-component'
 
 @Component({
   components: {
-    NavigationDrawer: () => import('@/components/NavigationDrawer.vue')
+    NavigationDrawer: () => import('@/components/NavigationDrawer.vue'),
+    BottomNavigation: () => import('@/components/BottomNavigation.vue')
   }
 })
 export default class App extends Vue {
