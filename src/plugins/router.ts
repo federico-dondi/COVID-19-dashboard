@@ -9,6 +9,10 @@ export default new VueRouter({
       path: '/',
       name: 'Dashboard',
       component: () => import('@/views/Dashboard.vue')
+    }, {
+      path: '/wiki',
+      name: 'Wiki',
+      component: () => import('@/views/Wiki.vue')
     }
   ]
 })
