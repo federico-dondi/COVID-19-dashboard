@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer app>
+  <v-navigation-drawer app mobile-break-point="960">
     <navigation-drawer-header />
 
     <v-divider/>
