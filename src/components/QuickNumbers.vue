@@ -1,6 +1,6 @@
 <template>
   <v-row dense>
-    <QuickNumbersItem
+    <quick-numbers-item
       v-for="(n, i) in numbers" :key="i"
       :icon="n.icon"
       :color="n.color"

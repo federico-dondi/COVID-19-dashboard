@@ -1,6 +1,6 @@
 <template>
   <v-bottom-navigation app grow color="primary" v-if="$vuetify.breakpoint.smAndDown">
-    <BottomNavigationLink
+    <bottom-navigation-link
       v-for="item in features" :key="item.to"
       :to="item.to"
       :icon="item.icon"
