@@ -1,6 +1,11 @@
 <template>
-  <v-navigation-drawer app mobile-break-point="960">
-    <navigation-drawer-header />
+  <v-navigation-drawer
+    app
+    mobile-break-point="960"
+    :mini-variant.sync="mini"
+    :mini-variant-width="56"
+  >
+    <navigation-drawer-header @close="mini = true" />
 
     <v-divider/>
 
@@ -83,6 +88,8 @@ export default class NavigationDrawer extends Vue {
       to: '/help'
     }
   ]
+
+  mini = false
 }
 </script>
 
