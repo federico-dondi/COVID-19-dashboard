@@ -1,5 +1,5 @@
 <template>
-  <v-btn :to="to">
+  <v-btn :to="to" class="stretch">
     <span>{{ title }}</span>
     <v-icon>{{ icon }}</v-icon>
   </v-btn>
@@ -17,3 +17,7 @@ export default class BottomNavigationLink extends Vue {
   @Prop({ type: String }) readonly to!: string
 }
 </script>
+
+<style scoped>
+.stretch { height: 100%; }
+</style>
