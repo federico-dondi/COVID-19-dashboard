@@ -14,21 +14,30 @@
 
       <v-list-item-group color="primary">
         <navigation-drawer-link
-          v-for="item in features" :key="item.to"
-          :to="item.to"
-          :icon="item.icon"
-          :title="item.title"
-        />
-
-        <v-subheader inset>SUPPORT</v-subheader>
-
-        <navigation-drawer-link
-          v-for="item in supports" :key="item.to"
+          v-for="item in items" :key="item.to"
           :to="item.to"
           :icon="item.icon"
           :title="item.title"
         />
       </v-list-item-group>
+
+      <navigation-drawer-social
+        color="grey darken-3"
+        href="https://github.com/federico-dondi"
+        hreflang="en"
+        icon="mdi-github"
+        title="GitHub"
+        v-show="!mini"
+      />
+
+      <navigation-drawer-social
+        color="orange darken-3"
+        href="https://stackoverflow.com/users/13278024/federico-dondi"
+        hreflang="en"
+        icon="mdi-stack-overflow"
+        title="StackOverflow"
+        v-show="!mini"
+      />
     </v-list>
   </v-navigation-drawer>
 </template>
@@ -46,11 +55,12 @@ interface NavigationItem {
 @Component({
   components: {
     NavigationDrawerHeader: () => import('@/components/NavigationDrawerHeader.vue'),
-    NavigationDrawerLink: () => import('@/components/NavigationDrawerLink.vue')
+    NavigationDrawerLink: () => import('@/components/NavigationDrawerLink.vue'),
+    NavigationDrawerSocial: () => import('@/components/NavigationDrawerSocial.vue')
   }
 })
 export default class NavigationDrawer extends Vue {
-  features: NavigationItem[] = [
+  items: NavigationItem[] = [
     {
       icon: 'mdi-chart-timeline-variant',
       title: 'Dashboard',
@@ -70,22 +80,6 @@ export default class NavigationDrawer extends Vue {
       icon: 'mdi-account-outline',
       title: 'About',
       to: '/about'
-    }
-  ]
-
-  supports: NavigationItem[] = [
-    {
-      icon: 'mdi-cog-outline',
-      title: 'Settings',
-      to: '/settings'
-    }, {
-      icon: 'mdi-message-alert-outline',
-      title: 'Send us a Feedback',
-      to: '/feedback'
-    }, {
-      icon: 'mdi-help-circle-outline',
-      title: 'Help',
-      to: '/help'
     }
   ]
 
