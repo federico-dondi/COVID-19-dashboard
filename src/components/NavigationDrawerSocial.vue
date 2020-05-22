@@ -4,7 +4,7 @@
     :href="href"
     :hreflang="href"
     target="_blank">
-    <v-icon left>{{ icon }}</v-icon> {{ title }}
+    <v-icon small left>{{ icon }}</v-icon> {{ title }}
   </v-btn>
   </v-list-item>
 </template>
