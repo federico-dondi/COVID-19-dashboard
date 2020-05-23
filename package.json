@@ -4,6 +4,7 @@
   "private": true,
   "description": "Coronavirus (as COVID-19) web-application to show contagions, statistics and more.",
   "author": "Federico Dondi",
+  "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
