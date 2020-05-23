@@ -52,6 +52,9 @@ export default class BottomNavigation extends Vue {
 
 <style scoped>
 .v-bottom-navigation {
-  box-shadow: 0px 2px 4px 4px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.15), 0px 1px 10px 0px rgba(0, 0, 0, 0.125);
+  box-shadow: none;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: rgba(0, 0, 0, 0.12) !important;
 }
 </style>
