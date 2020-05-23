@@ -1,7 +1,12 @@
 <template>
   <v-btn :to="to" class="stretch">
     <span>{{ title }}</span>
-    <v-icon>{{ icon }}</v-icon>
+
+    <v-icon>{{
+      (this.$route.path === to)
+        ? icon
+        : icon + '-outline'
+    }}</v-icon>
   </v-btn>
 </template>
 

@@ -27,22 +27,22 @@ interface NavigationItem {
 export default class BottomNavigation extends Vue {
   features: NavigationItem[] = [
     {
-      icon: 'mdi-chart-timeline-variant',
-      title: 'Dashboard',
+      icon: 'mdi-home',
+      title: 'Home',
       to: '/'
     },
     {
-      icon: 'mdi-book-outline',
+      icon: 'mdi-book',
       title: 'Wiki',
       to: '/wiki'
     },
     {
-      icon: 'mdi-book-search-outline',
+      icon: 'mdi-book-search',
       title: 'Guidelines',
       to: '/guidelines'
     },
     {
-      icon: 'mdi-account-outline',
+      icon: 'mdi-account',
       title: 'About',
       to: '/about'
     }
