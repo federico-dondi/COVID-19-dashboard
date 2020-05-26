@@ -1,5 +1,7 @@
 <template>
   <v-app>
+    <app-bar />
+
     <navigation-drawer />
 
     <v-content>
@@ -19,6 +21,7 @@ import Component from 'vue-class-component'
 
 @Component({
   components: {
+    AppBar: () => import('@/components/AppBar.vue'),
     NavigationDrawer: () => import('@/components/NavigationDrawer.vue'),
     BottomNavigation: () => import('@/components/BottomNavigation.vue')
   }
