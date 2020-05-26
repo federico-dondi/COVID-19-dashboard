@@ -29,15 +29,6 @@
         title="GitHub"
         v-show="!mini"
       />
-
-      <navigation-drawer-social
-        color="orange darken-3"
-        href="https://stackoverflow.com/users/13278024/federico-dondi"
-        hreflang="en"
-        icon="mdi-stack-overflow"
-        title="StackOverflow"
-        v-show="!mini"
-      />
     </v-list>
   </v-navigation-drawer>
 </template>
