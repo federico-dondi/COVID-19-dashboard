@@ -42,7 +42,7 @@ export default class BottomNavigation extends Vue {
       to: '/guidelines'
     },
     {
-      icon: 'mdi-account',
+      icon: 'mdi-information',
       title: 'About',
       to: '/about'
     }
