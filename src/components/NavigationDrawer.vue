@@ -14,7 +14,18 @@
 
       <v-list-item-group color="primary">
         <navigation-drawer-link
-          v-for="item in items" :key="item.to"
+          v-for="item in features" :key="item.to"
+          :to="item.to"
+          :icon="item.icon"
+          :title="item.title"
+        />
+      </v-list-item-group>
+
+      <v-subheader inset>SUPPORT</v-subheader>
+
+      <v-list-item-group color="primary">
+        <navigation-drawer-link
+          v-for="item in supports" :key="item.to"
           :to="item.to"
           :icon="item.icon"
           :title="item.title"
@@ -51,7 +62,7 @@ interface NavigationItem {
   }
 })
 export default class NavigationDrawer extends Vue {
-  items: NavigationItem[] = [
+  features: NavigationItem[] = [
     {
       icon: 'mdi-chart-timeline-variant',
       title: 'Dashboard',
@@ -68,9 +79,27 @@ export default class NavigationDrawer extends Vue {
       to: '/guidelines'
     },
     {
-      icon: 'mdi-account-outline',
+      icon: 'mdi-information-outline',
       title: 'About',
       to: '/about'
+    }
+  ]
+
+  supports: NavigationItem[] = [
+    {
+      icon: 'mdi-cog-outline',
+      title: 'Settings',
+      to: '/'
+    },
+    {
+      icon: 'mdi-message-text-outline',
+      title: 'Send us a Feedback',
+      to: '/'
+    },
+    {
+      icon: 'mdi-help-circle-outline',
+      title: 'Help',
+      to: '/'
     }
   ]
 
