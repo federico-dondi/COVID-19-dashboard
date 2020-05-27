@@ -1,8 +1,5 @@
 <template>
-  <v-list-item
-    target="_blank"
-    :href="href"
-    :hreflang="hreflang">
+  <v-list-item :to="to">
     <v-list-item-title>{{ title }}</v-list-item-title>
   </v-list-item>
 </template>
@@ -14,8 +11,7 @@ import { Prop } from 'vue-property-decorator'
 
 @Component
 export default class AppBarSocial extends Vue {
+  @Prop({ type: String }) readonly to!: string
   @Prop({ type: String }) readonly title!: string
-  @Prop({ type: String }) readonly href!: string
-  @Prop({ type: String }) readonly hreflang!: string
 }
 </script>

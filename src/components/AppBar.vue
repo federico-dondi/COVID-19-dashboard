@@ -13,12 +13,28 @@
 
     <v-spacer />
 
-    <app-bar-social
-      icon="mdi-github"
-      caption="Follow on GitHub"
-      href="https://github.com/federico-dondi"
-      hreflang="en"
-    />
+    <v-menu bottom right>
+      <template v-slot:activator="{ on }">
+        <v-btn icon v-on="on">
+          <v-icon>mdi-dots-vertical</v-icon>
+        </v-btn>
+      </template>
+
+      <v-list>
+        <app-bar-link v-for="(item, i) in items" :key="i"
+          :to="item.to"
+          :title="item.title"
+        />
+
+        <v-divider />
+
+        <app-bar-social
+          title="Follow on GitHub"
+          href="https://github.com/federico-dondi"
+          hreflang="en"
+        />
+      </v-list>
+    </v-menu>
   </v-app-bar>
 </template>
 
@@ -26,12 +42,33 @@
 import Vue from 'vue'
 import Component from 'vue-class-component'
 
+interface MenuItem {
+  title: string;
+  to: string;
+}
+
 @Component({
   components: {
+    AppBarLink: () => import('@/components/AppBarLink.vue'),
     AppBarSocial: () => import('@/components/AppBarSocial.vue')
   }
 })
-export default class AppBar extends Vue { }
+export default class AppBar extends Vue {
+  items: MenuItem[]= [
+    {
+      title: 'Settings',
+      to: '/'
+    },
+    {
+      title: 'Send us a Feedback',
+      to: '/'
+    },
+    {
+      title: 'Help',
+      to: '/'
+    }
+  ]
+}
 </script>
 
 <style scoped>
