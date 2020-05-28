@@ -27,16 +27,19 @@ import Component from 'vue-class-component'
   }
 })
 export default class App extends Vue {
-  get payload (): object { return this.$store.state.data }
-  set payload (value: object) { this.$store.commit('SET_DATA', value) }
+  get Global (): object { return this.$store.state.Global }
+  set Global (value: object) { this.$store.commit('SET_GLOBAL', value) }
+
+  get Countries (): object { return this.$store.state.Countries }
+  set Countries (value: object) { this.$store.commit('SET_COUNTRIES', value) }
 
   async created (): Promise<any> {
     await fetch('https://api.covid19api.com/summary')
       .then((res) => res.json())
       .then((res) => {
-        this.payload = res
+        this.Global = res.Global
+        this.Countries = res.Countries
       })
-      .catch((e) => { console.warn('COVID-19 API responded with an error.') })
   }
 }
 </script>

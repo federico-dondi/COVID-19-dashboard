@@ -28,16 +28,16 @@ interface QuickNumbersEntry {
   }
 })
 export default class QuickNumbers extends Vue {
-  get payload (): object { return this.$store.state.data }
-  set payload (value: object) { this.$store.commit('SET_DATA', value) }
+  get Global (): object { return this.$store.state.Global }
+  set Global (value: object) { this.$store.commit('SET_GLOBAL', value) }
 
-  @Watch('payload', { immediate: true })
+  @Watch('Global', { immediate: true })
   onPayloadChanged (newValue: any, oldValue: any): void {
     if (newValue === undefined) return
 
-    this.numbers[1].value = newValue.Global.TotalDeaths
-    this.numbers[2].value = newValue.Global.TotalRecovered
-    this.numbers[3].value = newValue.Global.TotalConfirmed
+    this.numbers[1].value = newValue.TotalDeaths
+    this.numbers[2].value = newValue.TotalRecovered
+    this.numbers[3].value = newValue.TotalConfirmed
 
     this.numbers[0].value =
       this.numbers[1].value +
