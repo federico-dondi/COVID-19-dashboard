@@ -2,7 +2,7 @@
   <v-app-bar app v-if="$vuetify.breakpoint.smAndDown">
     <v-list-item class="pa-0">
       <v-list-item-icon class="ma-3 ml-0 align-self-center">
-        <v-icon color="primary">mdi-virus</v-icon>
+        <v-icon color="primary">{{ mdiVirus }}</v-icon>
       </v-list-item-icon>
 
       <v-list-item-content>
@@ -16,7 +16,7 @@
     <v-menu bottom right>
       <template v-slot:activator="{ on }">
         <v-btn icon v-on="on">
-          <v-icon>mdi-dots-vertical</v-icon>
+          <v-icon>{{ mdiDotsVertical }}</v-icon>
         </v-btn>
       </template>
 
@@ -42,6 +42,11 @@
 import Vue from 'vue'
 import Component from 'vue-class-component'
 
+import {
+  mdiVirus,
+  mdiDotsVertical
+} from '@mdi/js'
+
 interface MenuItem {
   title: string;
   to: string;
@@ -54,6 +59,9 @@ interface MenuItem {
   }
 })
 export default class AppBar extends Vue {
+  readonly mdiVirus: string = mdiVirus
+  readonly mdiDotsVertical: string = mdiDotsVertical
+
   items: MenuItem[]= [
     {
       title: 'Settings',

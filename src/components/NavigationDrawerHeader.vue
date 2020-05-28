@@ -2,7 +2,7 @@
   <v-list>
     <v-list-item class="px-2">
       <v-list-item-avatar>
-        <v-icon color="primary">mdi-virus</v-icon>
+        <v-icon size="28" color="primary">{{ mdiVirus }}</v-icon>
       </v-list-item-avatar>
     </v-list-item>
 
@@ -13,7 +13,7 @@
       </v-list-item-content>
 
       <v-btn icon @click.stop="$emit('close')">
-        <v-icon>mdi-chevron-left</v-icon>
+        <v-icon>{{ mdiChevronLeft }}</v-icon>
       </v-btn>
     </v-list-item>
   </v-list>
@@ -23,6 +23,14 @@
 import Vue from 'vue'
 import Component from 'vue-class-component'
 
+import {
+  mdiVirus,
+  mdiChevronLeft
+} from '@mdi/js'
+
 @Component
-export default class NavigationDrawerHeader extends Vue { }
+export default class NavigationDrawerHeader extends Vue {
+  readonly mdiVirus: string = mdiVirus
+  readonly mdiChevronLeft: string = mdiChevronLeft
+}
 </script>

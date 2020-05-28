@@ -15,6 +15,13 @@ import Vue from 'vue'
 import Component from 'vue-class-component'
 import { Watch } from 'vue-property-decorator'
 
+import {
+  mdiShieldCheck,
+  mdiSkull,
+  mdiVirus,
+  mdiArmFlex
+} from '@mdi/js'
+
 interface QuickNumbersEntry {
   icon: string;
   color: string;
@@ -32,7 +39,7 @@ export default class QuickNumbers extends Vue {
   set Global (value: object) { this.$store.commit('SET_GLOBAL', value) }
 
   @Watch('Global', { immediate: true })
-  onPayloadChanged (newValue: any, oldValue: any): void {
+  onGlobalChanged (newValue: object): void {
     if (newValue === undefined) return
 
     this.numbers[1].value = newValue.TotalDeaths
@@ -47,25 +54,25 @@ export default class QuickNumbers extends Vue {
 
   numbers: QuickNumbersEntry[] = [
     {
-      icon: 'mdi-shield-check',
+      icon: mdiShieldCheck,
       color: 'primary',
       description: 'Total',
       value: 0
     },
     {
-      icon: 'mdi-skull',
+      icon: mdiSkull,
       color: 'error',
       description: 'Deceased',
       value: 0
     },
     {
-      icon: 'mdi-virus',
+      icon: mdiVirus,
       color: 'warning',
       description: 'Confirmed',
       value: 0
     },
     {
-      icon: 'mdi-arm-flex',
+      icon: mdiArmFlex,
       color: 'success',
       description: 'Recovered',
       value: 0

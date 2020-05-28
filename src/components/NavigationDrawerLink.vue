@@ -1,7 +1,7 @@
 <template>
   <v-list-item class="mr-2" :to="to">
     <v-list-item-icon>
-      <v-icon>{{ icon }}</v-icon>
+      <v-icon v-html="icon"></v-icon>
     </v-list-item-icon>
 
     <v-list-item-content>

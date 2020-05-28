@@ -4,6 +4,7 @@
       v-for="item in features" :key="item.to"
       :to="item.to"
       :icon="item.icon"
+      :iconOutline="item.iconOutline"
       :title="item.title"
     />
   </v-bottom-navigation>
@@ -13,8 +14,20 @@
 import Vue from 'vue'
 import Component from 'vue-class-component'
 
+import {
+  mdiHome,
+  mdiBook,
+  mdiBookSearch,
+  mdiInformation,
+  mdiHomeOutline,
+  mdiBookOutline,
+  mdiBookSearchOutline,
+  mdiInformationOutline
+} from '@mdi/js'
+
 interface NavigationItem {
   icon: string;
+  iconOutline: string;
   title: string;
   to: string;
 }
@@ -27,22 +40,26 @@ interface NavigationItem {
 export default class BottomNavigation extends Vue {
   features: NavigationItem[] = [
     {
-      icon: 'mdi-home',
+      icon: mdiHome,
+      iconOutline: mdiHomeOutline,
       title: 'Home',
       to: '/'
     },
     {
-      icon: 'mdi-book',
+      icon: mdiBook,
+      iconOutline: mdiBookOutline,
       title: 'Wiki',
       to: '/wiki'
     },
     {
-      icon: 'mdi-book-search',
+      icon: mdiBookSearch,
+      iconOutline: mdiBookSearchOutline,
       title: 'Guidelines',
       to: '/guidelines'
     },
     {
-      icon: 'mdi-information',
+      icon: mdiInformation,
+      iconOutline: mdiInformationOutline,
       title: 'About',
       to: '/about'
     }

@@ -5,7 +5,7 @@
     <v-icon>{{
       (this.$route.path === to)
         ? icon
-        : icon + '-outline'
+        : iconOutline
     }}</v-icon>
   </v-btn>
 </template>
@@ -18,6 +18,7 @@ import { Prop } from 'vue-property-decorator'
 @Component
 export default class BottomNavigationLink extends Vue {
   @Prop({ type: String }) readonly icon!: string
+  @Prop({ type: String }) readonly iconOutline!: string
   @Prop({ type: String }) readonly title!: string
   @Prop({ type: String }) readonly to!: string
 }

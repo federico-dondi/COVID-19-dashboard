@@ -34,10 +34,10 @@
 
       <navigation-drawer-social
         color="grey darken-3"
+        title="GitHub"
         href="https://github.com/federico-dondi"
         hreflang="en"
-        icon="mdi-github"
-        title="GitHub"
+        :icon="mdiGithub"
         v-show="!mini"
       />
     </v-list>
@@ -47,6 +47,18 @@
 <script lang="ts">
 import Vue from 'vue'
 import Component from 'vue-class-component'
+
+import {
+  mdiChartTimelineVariant,
+  mdiBookOutline,
+  mdiBookSearchOutline,
+  mdiInformationOutline,
+  mdiCogOutline,
+  mdiMessageTextOutline,
+  mdiHelpCircleOutline,
+  mdiGithub,
+  mdiStackOverflow
+} from '@mdi/js'
 
 interface NavigationItem {
   icon: string;
@@ -62,24 +74,27 @@ interface NavigationItem {
   }
 })
 export default class NavigationDrawer extends Vue {
+  readonly mdiGithub: string = mdiGithub
+  readonly mdiStackOverflow: string = mdiStackOverflow
+
   features: NavigationItem[] = [
     {
-      icon: 'mdi-chart-timeline-variant',
+      icon: mdiChartTimelineVariant,
       title: 'Dashboard',
       to: '/'
     },
     {
-      icon: 'mdi-book-outline',
+      icon: mdiBookOutline,
       title: 'Wiki',
       to: '/wiki'
     },
     {
-      icon: 'mdi-book-search-outline',
+      icon: mdiBookSearchOutline,
       title: 'Guidelines',
       to: '/guidelines'
     },
     {
-      icon: 'mdi-information-outline',
+      icon: mdiInformationOutline,
       title: 'About',
       to: '/about'
     }
@@ -87,17 +102,17 @@ export default class NavigationDrawer extends Vue {
 
   supports: NavigationItem[] = [
     {
-      icon: 'mdi-cog-outline',
+      icon: mdiCogOutline,
       title: 'Settings',
       to: '/settings'
     },
     {
-      icon: 'mdi-message-text-outline',
+      icon: mdiMessageTextOutline,
       title: 'Send us a Feedback',
       to: '/feedback'
     },
     {
-      icon: 'mdi-help-circle-outline',
+      icon: mdiHelpCircleOutline,
       title: 'Help',
       to: '/help'
     }
