@@ -39,7 +39,7 @@ export default class QuickNumbers extends Vue {
   set Global (value: object) { this.$store.commit('SET_GLOBAL', value) }
 
   @Watch('Global', { immediate: true })
-  onGlobalChanged (newValue: object): void {
+  onGlobalChanged (newValue: any): void {
     if (newValue === undefined) return
 
     this.numbers[1].value = newValue.TotalDeaths
