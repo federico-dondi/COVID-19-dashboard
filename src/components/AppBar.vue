@@ -57,15 +57,15 @@ export default class AppBar extends Vue {
   items: MenuItem[]= [
     {
       title: 'Settings',
-      to: '/'
+      to: '/settings'
     },
     {
       title: 'Send us a Feedback',
-      to: '/'
+      to: '/feedback'
     },
     {
       title: 'Help',
-      to: '/'
+      to: '/help'
     }
   ]
 }

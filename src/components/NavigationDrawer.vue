@@ -89,17 +89,17 @@ export default class NavigationDrawer extends Vue {
     {
       icon: 'mdi-cog-outline',
       title: 'Settings',
-      to: '/'
+      to: '/settings'
     },
     {
       icon: 'mdi-message-text-outline',
       title: 'Send us a Feedback',
-      to: '/'
+      to: '/feedback'
     },
     {
       icon: 'mdi-help-circle-outline',
       title: 'Help',
-      to: '/'
+      to: '/help'
     }
   ]
 
