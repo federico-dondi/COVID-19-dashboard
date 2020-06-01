@@ -22,10 +22,6 @@ export default new VueRouter({
       path: '/about',
       name: 'About',
       component: () => import('@/views/About.vue')
-    }, {
-      path: '*',
-      name: '404',
-      component: () => import('@/views/404.vue')
     }
   ]
 })
