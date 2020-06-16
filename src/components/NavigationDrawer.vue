@@ -40,6 +40,15 @@
         :icon="mdiGithub"
         v-show="!mini"
       />
+
+      <navigation-drawer-social
+        color="orange darken-3"
+        title="StackOverflow"
+        href="https://stackoverflow.com/users/13278024/federico-dondi"
+        hreflang="en"
+        :icon="mdiStackOverflow"
+        v-show="!mini"
+      />
     </v-list>
   </v-navigation-drawer>
 </template>
