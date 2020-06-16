@@ -1,9 +1,5 @@
 <template>
-  <div>
-    <quick-numbers />
-    <countries-table />
-    <!-- <cluster-map /> -->
-  </div>
+  <QuickNumbers />
 </template>
 
 <script lang="ts">
@@ -12,9 +8,7 @@ import Component from 'vue-class-component'
 
 @Component({
   components: {
-    QuickNumbers: () => import('@/components/QuickNumbers.vue'),
-    CountriesTable: () => import('@/components/CountriesTable.vue'),
-    ClusterMap: () => import('@/components/ClusterMap.vue')
+    QuickNumbers: () => import('@/components/QuickNumbers.vue')
   }
 })
 export default class Dashboard extends Vue { }
